@@ -1,5 +1,6 @@
 package com.example.mycalculator;
 
+import android.icu.util.IslamicCalendar;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +42,8 @@ public class NormalCalculatorActivitty extends AppCompatActivity {
     ImageView imageView;
     Boolean isPlay = false;
     AudioTrack mAudioTrack=null;
+    Integer num=null;
+    Integer operator = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -133,5 +137,182 @@ public class NormalCalculatorActivitty extends AppCompatActivity {
 
             }
         });
+
+        btn0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else  textView.append("0");
+            }
+        });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("1");
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("2");
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("3");
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.append("4");
+            }
+        });
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("5");
+            }
+        });
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("6");
+            }
+        });
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("7");
+            }
+        });
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("8");
+            }
+        });
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textView.getText().toString().length() == 11)
+                    Toast.makeText(getApplicationContext(), "digit Over flow",Toast.LENGTH_SHORT).show();
+                else textView.append("9");
+            }
+        });
+        btnEqual.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                textView.setText("");
+                num = null;
+                operator = 0;
+                return true;
+            }
+        });
+        btnPlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(operator == 0){
+                    num = Integer.parseInt( textView.getText().toString());
+                    textView.setText("");
+                    operator = 1;
+                }
+                else {
+                    num = Caloulate(num,Integer.parseInt( textView.getText().toString()),operator);
+                    operator = 1;
+                    textView.setText("");
+                }
+            }
+        });
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(operator == 0){
+                    num = Integer.parseInt( textView.getText().toString());
+                    textView.setText("");
+                    operator = 2;
+                }
+                else {
+                    num = Caloulate(num,Integer.parseInt( textView.getText().toString()),operator);
+                    operator = 2;
+                    textView.setText("");
+                }
+            }
+        });
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(operator == 0){
+                    num = Integer.parseInt( textView.getText().toString());
+                    textView.setText("");
+                    operator = 3;
+                }
+                else {
+                    num = Caloulate(num,Integer.parseInt( textView.getText().toString()),operator);
+                    operator = 3;
+                    textView.setText("");
+                }
+            }
+        });
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(operator == 0){
+                    num = Integer.parseInt( textView.getText().toString());
+                    textView.setText("");
+                    operator = 4;
+                }
+                else {
+                    num = Caloulate(num,Integer.parseInt( textView.getText().toString()),operator);
+                    operator = 4;
+                    textView.setText("");
+                }
+            }
+        });
+        btnEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String output = ""+Caloulate(num,Integer.parseInt( textView.getText().toString()),operator);
+                if(output.length() > 11){
+                    Toast.makeText(getApplicationContext(),"output length overflow",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    textView.setText(output);
+                }
+                operator = 0;
+                num = 0;
+            }
+        });
+    }
+     static Integer Caloulate(int num,int thisNum,int operator){
+        switch(operator){
+            case 1:
+                return num + thisNum;
+            case 2:
+                return num - thisNum;
+            case 3:
+                return num * thisNum;
+            case 4:
+                return num / thisNum;
+        }
+        return null;
     }
 }
