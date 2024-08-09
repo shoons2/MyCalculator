@@ -256,7 +256,7 @@ public class NormalCalculatorActivitty extends AppCompatActivity {
                 }
             }
         });
-        btnDiv.setOnClickListener(new View.OnClickListener() {
+        btnMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(operator == 0){
