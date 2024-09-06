@@ -1,6 +1,8 @@
 package com.example.mycalculator;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,16 +11,20 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class GeometryOptionActivty extends AppCompatActivity {
+    Button btnCircle;
+    Button btnTrapezoid;
+    Button btnParallelogram;
+    Button btnRhombus;
+    ImageView imgMolle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_geometry_option_activty);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        btnCircle = findViewById(R.id.btnCircle);
+        btnTrapezoid = findViewById(R.id.btnTrapezoid);
+        btnParallelogram = findViewById(R.id.btnParallelogram);
+        btnRhombus = findViewById(R.id.btnRhombus);
+        imgMolle = findViewById(R.id.imgMolle);
     }
 }
