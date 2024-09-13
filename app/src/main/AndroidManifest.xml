@@ -13,6 +13,21 @@
         android:theme="@style/Theme.MyCalculator"
         tools:targetApi="31">
         <activity
+            android:name=".GeometrytriangleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GeometrytrapezoidActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GeometryrhombusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GeometryparallelogramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GeometrycircleActivity"
+            android:exported="false" />
+        <activity
             android:name=".FractionConverterActivity"
             android:exported="false" />
         <activity
