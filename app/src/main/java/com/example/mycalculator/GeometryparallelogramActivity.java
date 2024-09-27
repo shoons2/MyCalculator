@@ -1,6 +1,10 @@
 package com.example.mycalculator;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +14,27 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class GeometryparallelogramActivity extends AppCompatActivity {
 
+    Button btnParallelogramResult;
+    EditText editParallelogramA;
+    EditText btnParallelogramB;
+    TextView textParallelogramResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_geometryparallelogram);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        btnParallelogramResult = findViewById(R.id.btnParallelogramResult);
+        editParallelogramA = findViewById(R.id.editParallelogramA);
+        btnParallelogramB = findViewById(R.id.btnParallelogramB);
+        textParallelogramResult = findViewById(R.id.textParallelogramResult);
+        btnParallelogramResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double A = Double.parseDouble(editParallelogramA.getText().toString());
+                double B = Double.parseDouble(btnParallelogramB.getText().toString());
+                double result = A*B/2;
+                textParallelogramResult.setText(""+result);
+            }
         });
     }
 }

@@ -10,11 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -36,6 +32,7 @@ public class GeometryOptionActivty extends AppCompatActivity {
         setContentView(R.layout.activity_geometry_option_activty);
         btnCircle = findViewById(R.id.btnCircle);
         btnTrapezoid = findViewById(R.id.btnTrapezoid);
+        btnTriangle = findViewById(R.id.btnTriangle);
         btnParallelogram = findViewById(R.id.btnParallelogram);
         btnRhombus = findViewById(R.id.btnRhombus);
         imgMolle = findViewById(R.id.imgMolle);
@@ -120,10 +117,22 @@ public class GeometryOptionActivty extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), GeometrytrapezoidActivity.class));
             }
         });
+        btnTriangle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), GeometrytriangleActivity.class));
+            }
+        });
         btnParallelogram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), GeometryparallelogramActivity.class));
+            }
+        });
+        btnRhombus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), GeometryrhombusActivity.class));
             }
         });
 

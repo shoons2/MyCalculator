@@ -1,6 +1,9 @@
 package com.example.mycalculator;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +13,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class GeometryrhombusActivity extends AppCompatActivity {
 
+    Button btnRhombusResultButton;
+    EditText btnRhombusResult;
+    EditText btnRhombusResult2;
+    TextView textRhombusResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_geometryrhombus);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
     }
 }

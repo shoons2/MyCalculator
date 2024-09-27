@@ -8,7 +8,7 @@
     tools:context=".GeometrycircleActivity">
 
     <ImageView
-        android:id="@+id/imageViewcilcle"
+        android:id="@+id/imageViewCircle"
         android:layout_width="300dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/circle" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/circleText"
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:text="r ="
