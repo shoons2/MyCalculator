@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.531" />
 
     <Button
-        android:id="@+id/btnRhombusResult"
+        android:id="@+id/btnRhombusResultButton"
         android:layout_width="200dp"
         android:layout_height="65dp"
         android:textSize="35dp"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.924" />
 
     <EditText
-        android:id="@+id/editRhombusA"
+        android:id="@+id/btnRhombusResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -72,7 +72,7 @@
         app:layout_constraintVertical_bias="0.545" />
 
     <EditText
-        android:id="@+id/editRhombusB"
+        android:id="@+id/btnRhombusResult2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
